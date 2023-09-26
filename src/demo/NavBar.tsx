@@ -1,6 +1,12 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from './Layout';
+import { Login } from './Login';
+import { UserMenu } from './UserMenu';
 
 export const NavBar = () => {
+  const { session } = useContext(UserContext);
+  console.log({ session });
   return (
     <>
       <nav className="nav-bar">
@@ -19,6 +25,7 @@ export const NavBar = () => {
               message board
             </Link>
           </li>
+          {session?.user ? <UserMenu /> : <Login />}
         </ul>
       </nav>
     </>
