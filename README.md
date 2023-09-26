@@ -58,6 +58,18 @@ npx supabase migration new <migration name>
 # npx supabase migration new original-ddl # `ddl` => Data Definition Language
 ```
 
+Apply a migration:
+
+```bash
+npx supabase db reset
+```
+
+Command to generate typscript types:
+
+```bash
+npx supabase gen types typescript --local > ./src/database.types.ts
+```
+
 ### [Playwright](https://playwright.dev/docs/intro)
 
 To initialize playwrigh in your repo:
