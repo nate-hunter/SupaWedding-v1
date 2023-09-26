@@ -1,3 +1,3 @@
 export const PostView = () => {
-    return <div>PostView</div>;
+  return <div>PostView</div>;
 };
