@@ -9,35 +9,35 @@ import { Welcome /* loader as welcomeLoader*/ } from './demo/Welcome';
 import './App.css';
 
 const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <Layout />,
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      {
+        path: '',
+        element: <MessageBoard />,
         children: [
-            {
-                path: '',
-                element: <MessageBoard />,
-                children: [
-                    {
-                        path: ':pageNumber',
-                        element: <AllPosts />,
-                    },
-                    {
-                        path: 'post/:postId',
-                        element: <PostView />,
-                    },
-                ],
-            },
-            {
-                path: 'welcome',
-                element: <Welcome />,
-                // loader: welcomeLoader,
-            },
+          {
+            path: ':pageNumber',
+            element: <AllPosts />,
+          },
+          {
+            path: 'post/:postId',
+            element: <PostView />,
+          },
         ],
-    },
+      },
+      {
+        path: 'welcome',
+        element: <Welcome />,
+        // loader: welcomeLoader,
+      },
+    ],
+  },
 ]);
 
 function App() {
-    return <RouterProvider router={router} />;
+  return <RouterProvider router={router} />;
 }
 
 export default App;
